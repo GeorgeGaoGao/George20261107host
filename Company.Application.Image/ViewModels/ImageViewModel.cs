@@ -27,6 +27,7 @@ namespace Company.Application.Image.ViewModels
 
             });
             detector.Grab();
+            //没看明白这里在做什么
         }
     }
 }
