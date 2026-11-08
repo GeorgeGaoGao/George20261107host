@@ -1,5 +1,7 @@
-﻿using Company.Application.Share.Prism;
+﻿using Company.Application.Share.Events;
+using Company.Application.Share.Prism;
 using Company.Core;
+using Company.Core.Ioc;
 using Company.Logger;
 using Prism.Ioc;
 using Prism.Modularity;
@@ -50,9 +52,15 @@ namespace Shell
 
         protected override void OnExit(ExitEventArgs e)
         {
+            CloseAllHardware();
             base.OnExit(e);
 
             Logs.LogInfo("关闭应用程序");
+        }
+
+        private void CloseAllHardware()
+        {
+            PrismProvider.EventAggregator.GetEvent<CloseAllHardwareEvent>().Publish();
         }
 
         protected override Window CreateShell()

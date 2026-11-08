@@ -4,6 +4,7 @@ using Company.Core.Ioc;
 using Company.Hardware.Camera;
 using Company.Hardware.ControlCard;
 using Company.Hardware.Detector;
+using Company.Logger;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -100,7 +101,7 @@ namespace Company.Application.Initialize.Services
             }
             catch(Exception ex)
             {
-                //todo 
+                Logs.LogError($"{ex.Message}");
             }
 
             try
@@ -109,7 +110,15 @@ namespace Company.Application.Initialize.Services
             }
             catch (Exception ex)
             {
-                //todo 
+               Logs.LogError($"{ex.Message}");
+            }
+            try
+            {
+                ControlCard.Close();
+            }
+            catch (Exception ex)
+            {
+                Logs.LogError($"{ex.Message}");
             }
         }
     }

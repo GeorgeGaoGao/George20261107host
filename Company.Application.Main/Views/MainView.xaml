@@ -32,9 +32,11 @@
                 <Button Content="&#xf044;" Style="{StaticResource IconButtonStyle}"/>
                 <Button Content="&#xf293;" Style="{StaticResource IconButtonStyle}"/>
                 <Button Content="&#xf240;" Style="{StaticResource IconButtonStyle}"/>
-                <Button Content="&#xf030;" Style="{StaticResource IconButtonStyle}" ToolTip="相机拍照"/>
-                <Button Content="&#xf03e;" Style="{StaticResource IconButtonStyle}" ToolTip="打开探测器"/>
-                <CheckBox x:Name="mouseWorkMode" Content="&#xf0b2;" Style="{StaticResource IconCheckButtonStyle}"/>
+                <Button Content="&#xf030;" Style="{StaticResource IconButtonStyle}" ToolTip="拍照采集(相机+探测器)" Command="{Binding GrabPhotoCommand}" />
+                <Button Content="&#xf03e;" Style="{StaticResource IconButtonStyle}" />
+                <CheckBox x:Name="mouseWorkMode" ToolTip="鼠标操作模式" 
+                          Content="&#xf0b2;" Style="{StaticResource IconCheckButtonStyle}" 
+                          Command="{Binding MouseWorkModeCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=self}}"/>
                 <ComboBox x:Name="combobox" Height="25" MinWidth="70" IsEnabled="{Binding ElementName=mouseWorkMode,Path=IsChecked}"/>
             </StackPanel>
             <ContentControl Grid.Row="2" prism:RegionManager.RegionName="{x:Static share:RegionNames.PrimaryRegion}"/>

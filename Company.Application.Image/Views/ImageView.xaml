@@ -5,13 +5,34 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Company.Application.Image.Views"
              xmlns:prism="http://prismlibrary.com/"
-             xmlns:share="clr-namespace:Company.Application.Share.Prism;assembly=Company.Application.Share"
+             xmlns:share="clr-namespace:Company.Application.Share.Prism;assembly=Company.Application.Share" xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
              prism:ViewModelLocator.AutoWireViewModel="True"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid x:Name="viewport" Background="Gray">
+        <b:Interaction.Triggers>
+            <b:EventTrigger EventName="Loaded">
+                <prism:InvokeCommandAction Command="{Binding ViewportLoadedCommand}"/>
+            </b:EventTrigger>
+            <b:EventTrigger EventName="MouseMove">
+                <prism:InvokeCommandAction Command="{Binding MouseMoveCommand}"/>
+            </b:EventTrigger>
+        </b:Interaction.Triggers>
         <Canvas ClipToBounds="True">
-            <Image Source="{Binding Gray16ImageSource.ImageSource}"/>
-        </Canvas>   
+            <Grid Name="imagebox" RenderTransform="{Binding TransformGroup}">
+                <Image Source="{Binding Gray16ImageSource.ImageSource}"/>
+            </Grid>
+        </Canvas>
+        <Grid Visibility="{Binding LineVisibility}">
+            <Line Stroke="GreenYellow" StrokeThickness="1" 
+                  X1="0" Y1="{Binding MousePoint.Y}"
+                  X2="{Binding ElementName=viewport,Path=ActualWidth}"
+                  Y2="{Binding MousePoint.Y}"/>
+            <Line Stroke="GreenYellow" StrokeThickness="1"
+                  X1="{Binding MousePoint.X}" Y1="0"
+                  X2="{Binding MousePoint.X}"
+                  Y2="{Binding ElementName=viewport,Path=ActualHeight}"/>
+        </Grid>
+        
     </Grid>
 </UserControl>

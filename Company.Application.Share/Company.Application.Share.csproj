@@ -139,6 +139,7 @@
     <Compile Include="Config\ISoftwareConfigProvider.cs" />
     <Compile Include="Config\ISystemConfigProvider.cs" />
     <Compile Include="Config\SoftwareConfig.cs" />
+    <Compile Include="Events\CloseAllHardwareEvent.cs" />
     <Compile Include="Events\LoginSuccessEvent.cs" />
     <Compile Include="Model\CurrentUser.cs" />
     <Compile Include="Prism\ModuleNames.cs" />

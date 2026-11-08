@@ -142,6 +142,9 @@
       <DependentUpon>PopupBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="Enums\LanguageType.cs" />
+    <Compile Include="Enums\MouseWorkMode.cs" />
+    <Compile Include="Enums\ZoomMode.cs" />
+    <Compile Include="Extension\ComboBoxExtension.cs" />
     <Compile Include="Extension\DependencyExtension.cs" />
     <Compile Include="Extension\ImageExtension.cs" />
     <Compile Include="Extension\ValueTypeExtension.cs" />
@@ -155,6 +158,7 @@
     <Compile Include="Ioc\PrismProvider.cs" />
     <Compile Include="Language\ILanguageManager.cs" />
     <Compile Include="Language\LanguageManager.cs" />
+    <Compile Include="Model\BindableSourceItem.cs" />
     <Compile Include="Model\ColorBGR.cs" />
     <Compile Include="Model\ColorBGRA.cs" />
     <Compile Include="Model\DoubleBuffer.cs" />

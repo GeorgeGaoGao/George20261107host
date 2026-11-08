@@ -1,4 +1,5 @@
 ﻿using Company.Application.Initialize.Services;
+using Company.Application.Share.Events;
 using Company.Application.Share.Prism;
 using Company.Core.Ioc;
 using Prism.Commands;
@@ -28,6 +29,9 @@ namespace Company.Application.Initialize.ViewModels
             LoadedCommand = ReactiveCommand.Create(Init);
 
             //LoadedCommand = new DelegateCommand(Init);
+
+            //订阅关闭所有硬件事件
+            PrismProvider.EventAggregator.GetEvent<CloseAllHardwareEvent>().Subscribe(manager.Close);
         }
 
         /// <summary>

@@ -17,7 +17,7 @@ namespace Company.Application.Process.Models
         /// <summary>
         /// 双缓冲内存区域
         /// </summary>
-        private DoubleBuffer<ColorBGRA> Buffer { get; set; }
+        private DoubleBuffer<ColorBGRA> Buffer { get; set; } = new DoubleBuffer<ColorBGRA>();
         /// <summary>
         /// 原始图像
         /// </summary>

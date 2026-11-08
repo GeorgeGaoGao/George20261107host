@@ -137,6 +137,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicatoinMainModule.cs" />
+    <Compile Include="Models\MainModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -186,7 +187,20 @@
       <Project>{67e2bce5-89ae-4d1d-82c2-67f2a6f51c6f}</Project>
       <Name>Company.Application.Share</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Company.Core\Company.Core.csproj">
+      <Project>{79113834-9f6d-4831-9b8b-3a3de2243b34}</Project>
+      <Name>Company.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Company.Hardware.Camera\Company.Hardware.Camera.csproj">
+      <Project>{5bdd25f3-d603-43e5-bca8-445c1db96ff0}</Project>
+      <Name>Company.Hardware.Camera</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Company.Hardware.Detector\Company.Hardware.Detector.csproj">
+      <Project>{4BDD85FD-34B0-4726-8C97-C215E30ABDE9}</Project>
+      <Name>Company.Hardware.Detector</Name>
+    </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>xcopy "$(ProjectDir)\bin\Debug\$(ProjectName).dll" "$(SolutionDir)\Shell\bin\Debug\Modules\" /Y /S

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Company.Core.Enums;
+using Company.Core.Extension;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,7 @@ namespace Company.Application.Main.Views
         public MainView()
         {
             InitializeComponent();
+            combobox.Binding<ZoomMode>();
         }
     }
 }
