@@ -9,7 +9,7 @@
              prism:ViewModelLocator.AutoWireViewModel="True"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid x:Name="viewport" Background="Gray" SizeChanged="viewport_SizeChanged">
+    <Grid x:Name="viewport" Background="Gray" Tag="{Binding ElementName=imagebox}">
         <b:Interaction.Triggers>
             <b:EventTrigger EventName="Loaded">
                 <prism:InvokeCommandAction Command="{Binding ViewportLoadedCommand}"/>

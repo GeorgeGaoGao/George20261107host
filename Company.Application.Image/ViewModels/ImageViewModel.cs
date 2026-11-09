@@ -1,4 +1,6 @@
-﻿using Company.Application.Share.Process;
+﻿using Company.Application.Share.Main;
+using Company.Application.Share.Process;
+using Company.Core.Enums;
 using Company.Core.Model;
 using Company.Hardware.Detector;
 using Prism.Commands;
@@ -22,11 +24,23 @@ namespace Company.Application.Image.ViewModels
         public TransformGroup TransformGroup { get; private set; }=new TransformGroup();
         private ScaleTransform _scaleTransform = new ScaleTransform();
         private TranslateTransform _translateTransform = new TranslateTransform();
+
+        private MouseWorkMode _mouseWorkMode = MouseWorkMode.默认操作;
+
+
+
+
+
         public Grid Viewport { get; private set; }
+        public Grid ImageBox {  get; private set; }
         [Reactive]
         public int  ViewportWidth { get;private set; }
         [Reactive]
         public int ViewportHeight { get; private set; }
+        [Reactive]
+        public int  ImageBoxWidth { get;private set; }
+        [Reactive]
+        public int ImageBoxHeight { get; private set; }
 
         [Reactive]
         public Point MousePoint { get; private set; } = new Point(-1, -1);
@@ -43,8 +57,15 @@ namespace Company.Application.Image.ViewModels
         public ICommand MouseRightButtonDownCommand { get; }
         public ICommand MouseRightButtonUpCommand { get; }
         public ICommand MouseWheelCommand { get; }
-        public ImageViewModel(IDetectorProcessModel detectorProcessModel, IDetector detector)
+        public ImageViewModel(IDetectorProcessModel detectorProcessModel, IDetector detector,IMouseWorkModeProvider mouseWorkModeProvider)
         {
+            mouseWorkModeProvider.MouseWorkObservable.Subscribe(mouseWorkMode => {
+
+                _mouseWorkMode= mouseWorkMode;
+            });
+
+
+
             //MouseMoveCommand = ReactiveCommand.Create<MouseEventArgs>(MouseMove);
             MouseMoveCommand = new DelegateCommand<MouseEventArgs>(MouseMove);
 
@@ -87,8 +108,9 @@ namespace Company.Application.Image.ViewModels
 
         private void ViewportSizeChanged(SizeChangedEventArgs args)
         {
-            ViewportWidth =(int) args.NewSize.Width;
+            ViewportWidth = (int)args.NewSize.Width;
             ViewportHeight = (int)args.NewSize.Height;
+            SetTransform();
         }
 
         private void MouseLeftButtonDown(MouseButtonEventArgs args)
@@ -122,8 +144,12 @@ namespace Company.Application.Image.ViewModels
         private void ViewportLoaded(RoutedEventArgs e) 
         {
             Viewport=(Grid)e.Source;
+            ImageBox = Viewport.Tag as Grid;
             ViewportWidth = (int)Viewport.ActualWidth;
             ViewportHeight = (int)Viewport.ActualHeight;
+            ImageBoxWidth = (int)ImageBox.ActualWidth;
+            ImageBoxHeight = (int)ImageBox.ActualHeight;
+
             SetTransform();
             ViewportLoadedCommand = null;//viewport的loaded事件只执行一次。
         }
@@ -132,11 +158,11 @@ namespace Company.Application.Image.ViewModels
         /// </summary>
         private void SetTransform()
         {
-           var scale=Math.Min(1*ViewportWidth/ Gray16ImageSource.ImageSource.Width, 1 * ViewportHeight / Gray16ImageSource.ImageSource.Height);
+           var scale=Math.Min(1.0*ViewportWidth/ ImageBoxWidth, 1.0 * ViewportHeight / ImageBoxHeight);
             _scaleTransform.ScaleX = scale;
             _scaleTransform.ScaleY = scale;
-            _translateTransform.X = (ViewportWidth - Gray16ImageSource.ImageSource.Width * scale) / 2;
-            _translateTransform.Y = (ViewportHeight - Gray16ImageSource.ImageSource.Height * scale) / 2;
+            _translateTransform.X = (ViewportWidth - ImageBoxWidth * scale) / 2;
+            _translateTransform.Y = (ViewportHeight - ImageBoxHeight * scale) / 2;
         }
 
         private void MouseMove(MouseEventArgs e)

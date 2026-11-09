@@ -1,11 +1,13 @@
 ﻿using Company.Application.Main.Views;
 using Company.Application.Share.Prism;
+using Company.Core.Extension;
 using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Regions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,6 +21,7 @@ namespace Company.Application.Main
     {
         public void OnInitialized(IContainerProvider containerProvider)
         {
+            containerProvider.InitializeAssembly(Assembly.GetExecutingAssembly());
             containerProvider.Resolve<IRegionManager>().RegisterViewWithRegion<MainView>(RegionNames.MainRegion) ;
             containerProvider.Resolve<IRegionManager>().RegisterViewWithRegion<PrimaryView>(RegionNames.PrimaryRegion);
         }
@@ -26,6 +29,7 @@ namespace Company.Application.Main
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<MainView>();
+            containerRegistry.RegisterAssembly(Assembly.GetExecutingAssembly());
         }
     }
 }
