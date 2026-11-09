@@ -53,7 +53,7 @@
       <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.122\lib\net462\Microsoft.Xaml.Behaviors.dll</HintPath>
     </Reference>
     <Reference Include="MvCameraControl.Net">
-      <HintPath>..\..\上位机学习\Company.Hardware.Camera.HIK\DLL\MvCameraControl.Net.dll</HintPath>
+      <HintPath>dll\MvCameraControl.Net.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />

@@ -9,13 +9,34 @@
              prism:ViewModelLocator.AutoWireViewModel="True"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid x:Name="viewport" Background="Gray">
+    <Grid x:Name="viewport" Background="Gray" SizeChanged="viewport_SizeChanged">
         <b:Interaction.Triggers>
             <b:EventTrigger EventName="Loaded">
                 <prism:InvokeCommandAction Command="{Binding ViewportLoadedCommand}"/>
             </b:EventTrigger>
+            <b:EventTrigger EventName="SizeChanged">
+                <prism:InvokeCommandAction Command="{Binding ViewportSizeChangedCommand}"/>
+            </b:EventTrigger>
             <b:EventTrigger EventName="MouseMove">
                 <prism:InvokeCommandAction Command="{Binding MouseMoveCommand}"/>
+            </b:EventTrigger>
+            <b:EventTrigger EventName="MouseLeave">
+                <prism:InvokeCommandAction Command="{Binding MouseLeaveCommand}"/>
+            </b:EventTrigger>
+            <b:EventTrigger EventName="MouseLeftButtonDown">
+                <prism:InvokeCommandAction Command="{Binding MouseLeftButtonDownCommand}"/>
+            </b:EventTrigger>
+            <b:EventTrigger EventName="MouseLeftButtonUp">
+                <prism:InvokeCommandAction Command="{Binding MouseLeftButtonUpCommand}"/>
+            </b:EventTrigger>
+            <b:EventTrigger EventName="MouseRightButtonDown">
+                <prism:InvokeCommandAction Command="{Binding MouseRightButtonDownCommand}"/>
+            </b:EventTrigger>
+            <b:EventTrigger EventName="MouseRightButtonUp">
+                <prism:InvokeCommandAction Command="{Binding MouseRightButtonUpCommand}"/>
+            </b:EventTrigger>
+            <b:EventTrigger EventName="MouseWheel">
+                <prism:InvokeCommandAction Command="{Binding MouseWheelCommand}"/>
             </b:EventTrigger>
         </b:Interaction.Triggers>
         <Canvas ClipToBounds="True">
@@ -33,6 +54,5 @@
                   X2="{Binding MousePoint.X}"
                   Y2="{Binding ElementName=viewport,Path=ActualHeight}"/>
         </Grid>
-        
     </Grid>
 </UserControl>
