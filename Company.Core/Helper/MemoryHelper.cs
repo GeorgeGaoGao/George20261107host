@@ -17,9 +17,14 @@ namespace Company.Core.Helper
         /// </summary>
         /// <param name="intPtr"></param>
         /// <param name="size"></param>
-        [DllImport("kernel32.dll",EntryPoint = "RtlZeroMemory", CharSet = CharSet.Ansi)]
-        public static extern void ZeroMemory(IntPtr intPtr, long size);
+        //[DllImport("kernel32.dll", EntryPoint = "RtlZeroMemory", CharSet = CharSet.Ansi)]
+        //public static extern void ZeroMemory(IntPtr intPtr, long size);
 
+
+
+        [DllImport("kernel32.dll", EntryPoint = "RtlZeroMemory",
+           CallingConvention = CallingConvention.Winapi)]
+        public static extern void ZeroMemory(IntPtr destination, UIntPtr length);
 
         /// <summary>
         /// 内存复制

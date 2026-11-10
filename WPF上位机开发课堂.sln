@@ -53,6 +53,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Company.Hardware.ControlCar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Company.Application.Process", "Company.Application.Process\Company.Application.Process.csproj", "{ABEE64CB-BBBB-4071-8765-BCEE2128074F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Algorithm", "Algorithm", "{6D09030D-4F83-4634-8FF5-E2AE0C684271}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Company.Algorithm.Unwrapper", "Company.Algorithm.Unwrapper\Company.Algorithm.Unwrapper.csproj", "{3B83DDD5-8B22-4A39-BCD3-2FC9B3FF1989}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -143,6 +147,10 @@ Global
 		{ABEE64CB-BBBB-4071-8765-BCEE2128074F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABEE64CB-BBBB-4071-8765-BCEE2128074F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABEE64CB-BBBB-4071-8765-BCEE2128074F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B83DDD5-8B22-4A39-BCD3-2FC9B3FF1989}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B83DDD5-8B22-4A39-BCD3-2FC9B3FF1989}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B83DDD5-8B22-4A39-BCD3-2FC9B3FF1989}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B83DDD5-8B22-4A39-BCD3-2FC9B3FF1989}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -168,6 +176,7 @@ Global
 		{846A6E61-77EE-4AB6-971F-2E6C08D7E044} = {CC3C25D7-59DD-43CB-875C-71CEA86A6181}
 		{45DB8ECE-0E85-456D-9B5D-5C08C2247D3C} = {CC3C25D7-59DD-43CB-875C-71CEA86A6181}
 		{ABEE64CB-BBBB-4071-8765-BCEE2128074F} = {0881FC87-A4FA-45EA-8948-36CB7D9E8619}
+		{3B83DDD5-8B22-4A39-BCD3-2FC9B3FF1989} = {6D09030D-4F83-4634-8FF5-E2AE0C684271}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B5C785D8-BDBC-4457-A3A9-1227B93869D7}

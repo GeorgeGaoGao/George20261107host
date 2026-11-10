@@ -37,7 +37,7 @@
                 <CheckBox x:Name="mouseWorkMode" ToolTip="鼠标操作模式" 
                           Content="&#xf0b2;" Style="{StaticResource IconCheckButtonStyle}" 
                           Command="{Binding MouseWorkModeCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=self}}"/>
-                <ComboBox x:Name="combobox" Height="25" MinWidth="70" IsEnabled="{Binding ElementName=mouseWorkMode,Path=IsChecked}"/>
+                <ComboBox x:Name="combobox" Height="25" MinWidth="70" IsEnabled="{Binding ElementName=mouseWorkMode,Path=IsChecked}" SelectedValue="{Binding MainModel.ZoomMode}"/>
             </StackPanel>
             <ContentControl Grid.Row="2" prism:RegionManager.RegionName="{x:Static share:RegionNames.PrimaryRegion}"/>
             <ContentControl Grid.Row="3" prism:RegionManager.RegionName="{x:Static share:RegionNames.AxisRegion}"/>

@@ -25,9 +25,6 @@ namespace Company.Application.Image.Views
             InitializeComponent();
         }
 
-        private void viewport_SizeChanged(object sender, SizeChangedEventArgs e)
-        {
-
-        }
+      
     }
 }

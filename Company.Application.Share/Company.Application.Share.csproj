@@ -142,6 +142,7 @@
     <Compile Include="Events\CloseAllHardwareEvent.cs" />
     <Compile Include="Events\LoginSuccessEvent.cs" />
     <Compile Include="Main\IMouseWorkModeProvider.cs" />
+    <Compile Include="Main\IZoomModeProvider.cs" />
     <Compile Include="Model\CurrentUser.cs" />
     <Compile Include="Prism\ModuleNames.cs" />
     <Compile Include="Prism\RegionNames.cs" />

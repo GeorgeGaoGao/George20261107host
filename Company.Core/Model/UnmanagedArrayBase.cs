@@ -38,7 +38,7 @@ namespace Company.Core.Model
             Size = size;
             Header = Marshal.AllocHGlobal(new IntPtr(Length));
             if(isResetMemory)
-                MemoryHelper.ZeroMemory(Header, Length);
+                MemoryHelper.ZeroMemory(Header, (UIntPtr)Length);
         }
 
         ~UnmanagedArrayBase()
