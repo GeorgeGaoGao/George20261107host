@@ -16,10 +16,10 @@ namespace Company.Application.Flow.ViewModels
         public IFilterModel DisplayModel { get; set; }
 
         public ICommand SubmitCommand { get;  }
-        public AddFilterViewModel()
+        public AddFilterViewModel(IFilterFactory filterFactory)
         {
             Title = "请选择滤波算法";
-            DisplayModels = new List<IFilterModel>();//todo 后期将系统中所有算法用反射实例化。
+            DisplayModels = filterFactory.CreateFilterModels();//todo 后期将系统中所有算法用反射实例化。
             SubmitCommand = new DelegateCommand(Submit);
         }
 

@@ -1,4 +1,5 @@
-﻿using Company.Application.Filter.Views;
+﻿using Company.Application.Filter.Attributes;
+using Company.Application.Filter.Views;
 using Company.Application.Share.Filter;
 using Company.Core.Extension;
 using Company.Core.Model;
@@ -13,6 +14,7 @@ using System.Threading.Tasks;
 
 namespace Company.Application.Filter.Models
 {
+    [Filter]
     public class TestFilterModel : FilterModelBase
     {
         [Reactive]
