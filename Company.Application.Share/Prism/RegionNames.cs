@@ -48,9 +48,9 @@ namespace Company.Application.Share.Prism
         /// </summary>
         public const string DrawToolRegion = "DrawToolRegion";
 
+        public const string FlowRegion = "FlowRegion";
+        public const string FilterRegion = "FilterRegion";
 
-
-        
 
     }
 }

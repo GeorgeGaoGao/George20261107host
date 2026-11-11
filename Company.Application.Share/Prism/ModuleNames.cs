@@ -46,7 +46,9 @@ namespace Company.Application.Share.Prism
         /// 图像处理模块
         /// </summary>
         public const string ApplicationProcessModule = "ApplicationProcessModule";
-
+        public const string ApplicationFlowModule = "ApplicationFlowModule";
+        public const string ApplicationFilterModule = "ApplicationFilterModule";
+        
 
     }
 }

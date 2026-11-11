@@ -1,6 +1,7 @@
 ﻿using Company.Application.Config.Services;
 using Company.Application.Share.Config;
 using Company.Core.Ioc;
+using Prism.Commands;
 using ReactiveUI;
 using System;
 using System.Collections.Generic;
@@ -21,7 +22,8 @@ namespace Company.Application.Config.ViewModels
         {
             SystemConfigManager = systemConfigManager;
             SystemConfigProvider = systemConfigProvider;
-            OKCommand = ReactiveCommand.Create(Submit);
+            //OKCommand = ReactiveCommand.Create(Submit);
+            OKCommand = new DelegateCommand(Submit);
         }
 
         private void Submit()

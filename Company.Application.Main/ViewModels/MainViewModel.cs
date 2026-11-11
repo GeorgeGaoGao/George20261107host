@@ -30,6 +30,7 @@ namespace Company.Application.Main.ViewModels
             Camera=camera;
             MainModel= mainModel;
             MouseWorkModeCommand = new DelegateCommand<CheckBox>(GetMouseWorkMode);
+            GrabPhoto();
         }
 
         private void GetMouseWorkMode(CheckBox checkBox)

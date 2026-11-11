@@ -186,9 +186,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy "$(ProjectDir)\bin\Debug\$(ProjectName).dll" "$(SolutionDir)\Shell\bin\Debug\Modules\" /Y /S
-xcopy "$(ProjectDir)\bin\Release\$(ProjectName).dll" "$(SolutionDir)\Shell\bin\Release\Modules\" /Y /S
-</PostBuildEvent>
+    <PostBuildEvent>xcopy "$(TargetPath)" "$(SolutionDir)Shell\bin\$(Configuration)\$(TargetFramework)\Modules\" /Y</PostBuildEvent>
   </PropertyGroup>
   <Import Project="..\packages\Fody.6.8.0\build\Fody.targets" Condition="Exists('..\packages\Fody.6.8.0\build\Fody.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

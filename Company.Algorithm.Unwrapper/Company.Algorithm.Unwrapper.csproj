@@ -71,4 +71,7 @@
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetPath)" "$(SolutionDir)Shell\bin\$(Configuration)\$(TargetFramework)\Modules\" /Y</PostBuildEvent>
+  </PropertyGroup>
 </Project>

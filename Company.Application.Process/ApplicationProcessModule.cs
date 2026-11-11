@@ -1,4 +1,6 @@
-﻿using Company.Application.Process.Views;
+﻿using Company.Application.Flow.Views;
+using Company.Application.Process.ViewModels;
+using Company.Application.Process.Views;
 using Company.Application.Share.Prism;
 using Company.Core.Extension;
 using Prism.Ioc;
@@ -14,6 +16,7 @@ using System.Threading.Tasks;
 namespace Company.Application.Process
 {
     [Module(ModuleName = ModuleNames.ApplicationProcessModule, OnDemand = true)]
+    [ModuleDependency(ModuleNames.ApplicationFlowModule)]
     public class ApplicationProcessModule : IModule
     {
         public void OnInitialized(IContainerProvider containerProvider)

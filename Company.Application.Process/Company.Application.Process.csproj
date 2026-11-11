@@ -188,6 +188,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Company.Application.Flow\Company.Application.Flow.csproj">
+      <Project>{b5962e28-f6ba-4611-b9b8-4543bf793ba6}</Project>
+      <Name>Company.Application.Flow</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Company.Application.Share\Company.Application.Share.csproj">
       <Project>{67e2bce5-89ae-4d1d-82c2-67f2a6f51c6f}</Project>
       <Name>Company.Application.Share</Name>
@@ -216,9 +220,7 @@
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy "$(ProjectDir)\bin\Debug\$(ProjectName).dll" "$(SolutionDir)\Shell\bin\Debug\Modules\" /Y /S
-xcopy "$(ProjectDir)\bin\Release\$(ProjectName).dll" "$(SolutionDir)\Shell\bin\Release\Modules\" /Y /S
-</PostBuildEvent>
+    <PostBuildEvent>xcopy "$(TargetPath)" "$(SolutionDir)Shell\bin\$(Configuration)\$(TargetFramework)\Modules\" /Y</PostBuildEvent>
   </PropertyGroup>
   <Import Project="..\packages\Fody.6.8.0\build\Fody.targets" Condition="Exists('..\packages\Fody.6.8.0\build\Fody.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
