@@ -23,7 +23,7 @@ namespace Company.Application.Filter.Models
         public abstract void Filter(UnmanagedArray2D<ushort> photo);
 
 
-        public abstract IObservable<Unit> GetObservable();
+        //public abstract IObservable<Unit> GetObservable();
 
     }
 }

@@ -10,24 +10,34 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Company.Core.Extension;
 using Prism.Commands;
+using Company.Application.Share.Filter;
+using Company.Core.Helper;
+using Company.Application.Flow.Models;
+using Prism.Ioc;
 
 namespace Company.Application.Flow.ViewModels
 {
     public class FlowViewModel:ReactiveObject
     {
+        public FlowModel FlowModel { get; }
         public ICommand AddFilterCommand { get;  }
 
-        public FlowViewModel()
+        public FlowViewModel(IContainerProvider containerProvider)
         {
             AddFilterCommand = new DelegateCommand(AddFilter);
+            FlowModel=containerProvider.Resolve<IFlowModel>() as FlowModel;
         }
 
         private void AddFilter()
         {
-            PrismProvider.DialogService.ShowDialog<AddFilterView>(parameters => {
-                if (parameters.Result==ButtonResult.OK)
+            PrismProvider.DialogService.ShowDialog<AddFilterView>(para => {
+                if (para.Result==ButtonResult.OK)
                 {
                     //todo 得到了算法模型
+                    var model = para.Parameters.GetValue<IFilterModel>("DisplayModel");
+                    Assert.NotNull(model);
+                    FlowModel.AddFilter(model);
+
                 }
             
             });

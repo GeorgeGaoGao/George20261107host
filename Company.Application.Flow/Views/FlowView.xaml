@@ -16,7 +16,7 @@
         </Grid.ColumnDefinitions>
         <ScrollViewer>
             <StackPanel>
-                <ListBox/>
+                <ListBox ItemsSource="{Binding FlowModel.Filters}" DisplayMemberPath="Name"/>
                 <Button Content="添加算法模型" Command="{Binding AddFilterCommand}"/>
             </StackPanel>
         </ScrollViewer>

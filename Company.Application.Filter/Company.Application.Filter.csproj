@@ -108,6 +108,7 @@
     <Compile Include="ApplicationFilterModule.cs" />
     <Compile Include="Attributes\FilterAttribute.cs" />
     <Compile Include="Models\FilterModelBase.cs" />
+    <Compile Include="Models\SobelFilterModel.cs" />
     <Compile Include="Models\TestFilterModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -124,7 +125,11 @@
     </Compile>
     <Compile Include="Services\FilterFactory.cs" />
     <Compile Include="ViewModels\FilterViewModelBase.cs" />
+    <Compile Include="ViewModels\SobelFilterViewModel.cs" />
     <Compile Include="ViewModels\TestFilterViewModel.cs" />
+    <Compile Include="Views\SobelFilterView.xaml.cs">
+      <DependentUpon>SobelFilterView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\TestFilterView.xaml.cs">
       <DependentUpon>TestFilterView.xaml</DependentUpon>
     </Compile>
@@ -159,6 +164,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Page Include="Views\SobelFilterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\TestFilterView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

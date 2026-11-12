@@ -131,6 +131,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationFlowModule.cs" />
+    <Compile Include="Models\FlowModel.cs" />
+    <Compile Include="Models\IFlowModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

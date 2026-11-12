@@ -32,9 +32,9 @@ namespace Company.Application.Filter.Models
            //todo cpptest
         }
 
-        public override IObservable<Unit> GetObservable()
-        {
-            return this.WhenAnyValue(p => p.Name, p => p.IsEnable).Select(p => new Unit());
-        }
+        //public override IObservable<Unit> GetObservable()
+        //{
+        //    return this.WhenAnyValue(p => p.Name, p => p.IsEnable).Select(p => new Unit());
+        //}
     }
 }

@@ -34,7 +34,7 @@ namespace Company.Application.Share.Filter
         /// 获取当前算法的观察者
         /// </summary>
         /// <returns></returns>
-        IObservable<Unit> GetObservable();
+        //IObservable<Unit> GetObservable();
     }
     public class Unit { }
 }
