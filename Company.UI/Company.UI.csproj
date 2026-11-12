@@ -136,6 +136,7 @@
     <Compile Include="Controls\WpfPropertyGrid.xaml.cs">
       <DependentUpon>WpfPropertyGrid.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converters\IconKeyToImageConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -154,8 +155,8 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="app.config" />
-    <Resource Include="Font\FontAwesome.otf" />
-    <None Include="Font\矢量版 – Font Awesome 中文网.pdf" />
+    <Resource Include="Fonts\FontAwesome.otf" />
+    <None Include="Fonts\矢量版 – Font Awesome 中文网.pdf" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -187,6 +188,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Style\Converter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Style\FontAwesome.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -195,11 +200,52 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Style\Icon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Style\MahApps.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\010_云文档.png" />
+    <Resource Include="Icons\010_全部功能.png" />
+    <Resource Include="Icons\010_出差申请.png" />
+    <Resource Include="Icons\010_发现更多.png" />
+    <Resource Include="Icons\010_外出申请.png" />
+    <Resource Include="Icons\010_外出签到.png" />
+    <Resource Include="Icons\010_工作日志.png" />
+    <Resource Include="Icons\010_工作餐预定.png" />
+    <Resource Include="Icons\010_我的主页.png" />
+    <Resource Include="Icons\010_我的团队.png" />
+    <Resource Include="Icons\010_我的待办.png" />
+    <Resource Include="Icons\010_我的日程.png" />
+    <Resource Include="Icons\010_打卡签到.png" />
+    <Resource Include="Icons\010_扫一扫.png" />
+    <Resource Include="Icons\010_收藏.png" />
+    <Resource Include="Icons\010_新建流程.png" />
+    <Resource Include="Icons\010_更多.png" />
+    <Resource Include="Icons\010_流程审批.png" />
+    <Resource Include="Icons\010_消息通知.png" />
+    <Resource Include="Icons\010_现场出勤.png" />
+    <Resource Include="Icons\010_用印审批.png" />
+    <Resource Include="Icons\010_福利平台.png" />
+    <Resource Include="Icons\010_组织架构.png" />
+    <Resource Include="Icons\010_视频会议.png" />
+    <Resource Include="Icons\010_设置.png" />
+    <Resource Include="Icons\010_请假申请-02.png" />
+    <Resource Include="Icons\010_请假申请-21.png" />
+    <Resource Include="Icons\010_费用报销.png" />
+    <Resource Include="Icons\010_远程办公.png" />
+    <Resource Include="Icons\010_通知.png" />
+    <Resource Include="Icons\010_通讯录联系人.png" />
+    <Resource Include="Icons\010_面试日程.png" />
+    <Resource Include="Icons\010_风险事件.png" />
+    <Resource Include="Icons\icon-kfckfc.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.6.8.0\build\Fody.targets" Condition="Exists('..\packages\Fody.6.8.0\build\Fody.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

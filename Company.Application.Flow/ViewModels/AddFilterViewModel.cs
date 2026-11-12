@@ -1,6 +1,7 @@
 ﻿using Company.Application.Share.Filter;
 using Company.Core.Ioc;
 using Prism.Commands;
+using Prism.Services.Dialogs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +26,9 @@ namespace Company.Application.Flow.ViewModels
 
         private void Submit()
         {
-            throw new NotImplementedException();
+            DialogParameters parameters = new DialogParameters();
+            parameters.Add(nameof(DisplayModel), DisplayModel);
+            CloseDialog(ButtonResult.OK, parameters);
         }
     }
 }

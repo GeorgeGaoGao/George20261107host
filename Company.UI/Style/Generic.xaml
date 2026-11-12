@@ -4,5 +4,7 @@
         <ResourceDictionary Source="pack://application:,,,/Company.UI;component/Style/CheckBox.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/Company.UI;component/Style/Button.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/Company.UI;component/Style/MahApps.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Company.UI;component/Style/Converter.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Company.UI;component/Style/Icon.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

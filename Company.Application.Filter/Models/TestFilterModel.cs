@@ -25,7 +25,7 @@ namespace Company.Application.Filter.Models
 
         public override string View => nameof(TestFilterView);
 
-        public override string Icon => "";
+        public override string Icon => "IconTest";
 
         public override void Filter(UnmanagedArray2D<ushort> photo)
         {
